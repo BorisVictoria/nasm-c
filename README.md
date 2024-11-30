@@ -67,3 +67,8 @@ Run the benchmark on a Unix-based operating system by using the following comman
 ```
 ./test.sh - A bash script that runs the program 30 times then outputs the average execution time.
 input.txt - A text file containing a comma-separated list of floats.
+
+### Video Link 
+```
+https://youtu.be/LlVNUqJ55iE
+```
