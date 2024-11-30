@@ -70,5 +70,5 @@ input.txt - A text file containing a comma-separated list of floats.
 
 ### Video Link 
 ```
-https://youtu.be/LlVNUqJ55iE
+[https://youtu.be/LlVNUqJ55iE](https://youtu.be/LlVNUqJ55iE)
 ```
