@@ -9,7 +9,7 @@ for i in $(seq 1 $num_runs); do
 done
 average_time=$(echo "$total_time / $num_runs" | bc -l)
 
-echo "Average execution time over $num_runs runs: $average_time milliseconds"
+echo "Average execution time over $num_runs runs: $average_time nanoseconds"
 
 
 

@@ -8,6 +8,7 @@ int main() {
 
   int length;
   scanf("%d", &length);
+  printf("%d\n", length);
  
   float* cars = (float*)malloc(length * 3 * sizeof(float));
   int* results = (int*)malloc(length * sizeof(int));
@@ -22,13 +23,14 @@ int main() {
     }
   }
 
-  clock_t tic = clock();
+  struct timespec tic, toc;
+  clock_gettime(CLOCK_MONOTONIC, &tic);
 
   accel(cars, results, length);
 
-  clock_t toc = clock();
-
-  printf("%f", ((double)(toc-tic) / CLOCKS_PER_SEC) * 1000);
+  clock_gettime(CLOCK_MONOTONIC, &toc);
+  
+  printf("%ld", toc.tv_nsec - tic.tv_nsec);
   
   free(cars);
   free(results);

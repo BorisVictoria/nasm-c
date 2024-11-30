@@ -1,3 +1,4 @@
+#include "bits/time.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -8,6 +9,7 @@ int main() {
 
   int length;
   scanf("%d", &length);
+  printf("%d\n", length);
  
   float* cars = (float*)malloc(length * 3 * sizeof(float));
   int* results = (int*)malloc(length * sizeof(int));
@@ -22,17 +24,18 @@ int main() {
     }
   }
 
-  clock_t tic = clock();
+  struct timespec tic, toc;
+  clock_gettime(CLOCK_MONOTONIC, &tic);
 
   accel(cars, results, length);
 
-  clock_t toc = clock();
+  clock_gettime(CLOCK_MONOTONIC, &toc);
 
   for (int i = 0; i < length; i++) {
     printf("Car %d: %d\n", i+1,  *(results + i));
   }
   
-  printf("Elapsed: %f milliseconds\n", ((double)(toc-tic) / CLOCKS_PER_SEC) * 1000);
+  printf("Elapsed: %ld nanoseconds\n", toc.tv_nsec - tic.tv_nsec);
   
   free(cars);
   free(results);
