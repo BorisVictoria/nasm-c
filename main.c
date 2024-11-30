@@ -33,7 +33,7 @@ int main() {
   }
   
 
-  printf("Elapsed: %f seconds\n", (double)(toc-tic) / CLOCKS_PER_SEC);
+  printf("Elapsed: %f milliseconds\n", ((double)(toc-tic) / CLOCKS_PER_SEC) * 1000);
 
   free(cars);
   free(results);
