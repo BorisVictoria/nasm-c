@@ -10,7 +10,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       devShells.${system}.default = pkgs.mkShell {
-        packages = with pkgs; [ nasm gcc gdb ];
+        packages = with pkgs; [ nasm gcc gdb bc ];
 
         shellHook = ''
           nu

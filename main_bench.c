@@ -28,11 +28,7 @@ int main() {
 
   clock_t toc = clock();
 
-  for (int i = 0; i < length; i++) {
-    printf("Car %d: %d\n", i+1,  *(results + i));
-  }
-  
-  printf("Elapsed: %f milliseconds\n", ((double)(toc-tic) / CLOCKS_PER_SEC) * 1000);
+  printf("%f", ((double)(toc-tic) / CLOCKS_PER_SEC) * 1000);
   
   free(cars);
   free(results);
