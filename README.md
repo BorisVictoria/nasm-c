@@ -46,17 +46,24 @@ The program uses input redirection to get its inputs. See the format of the inpu
 ```
 ./main_out < input_file.txt
 ```
-
-### Benchmarking
-Run the benchmark on a Unix-based operating system by using the following command:
-```
-./test.sh <input.txt>
-```
-./test.sh - A bash script that runs the program 30 times then outputs the average execution time.
-input.txt - A text file containing a comma-separated list of floats of the following format:
 ```
 3
 0.0, 62.5, 10.1
 60.0, 122.3, 5.5
 30.0, 160.7, 7.8
 ```
+### Input Generator
+There is also an input generator that can be used to create input files. The file name is set as the number of elements to be generated.
+
+Compile
+```
+gcc -o gen gen.c
+```
+
+### Benchmarking (Linux)
+Run the benchmark on a Unix-based operating system by using the following command:
+```
+./test.sh <input.txt>
+```
+./test.sh - A bash script that runs the program 30 times then outputs the average execution time.
+input.txt - A text file containing a comma-separated list of floats.
